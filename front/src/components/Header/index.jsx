@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import Button from '@mui/material/Button';
 import { FaAngleDown, FaPlus } from "react-icons/fa";
 
 
 import './index.css'
 
 const Header = () => {
-    const [userLogado, setUserLogado] = useState(true);
+    const [userLogado, setUserLogado] = useState(false);
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleMenu = (e) => {

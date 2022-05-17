@@ -4,7 +4,7 @@ import './index.css'
 
 const Anuncios = () => {
     
-    const [filtro, setFiltro] = useState('Recentes');
+    const [filtro, setFiltro] = useState('carro');
 
     return(
         <div className='corpo-anuncio'>
@@ -36,12 +36,51 @@ const Anuncios = () => {
                 </>
             ) : (
                 <>
-                    <div className="container-anuncio-filtrado">
+                    <div className="body-anuncio-filtrado">
                         <div className="anuncios-titulo-filtro-recente">
                         { filtro === 'carro' && <h1>Autos e peças</h1> }
                         { filtro === 'celular' && <h1>Eletrônicos e Celulares</h1> }
                         { filtro === 'musica' && <h1>Músicas e Hobbies</h1> }
                         { filtro === 'moveis' && <h1>Para sua casa</h1> }
+                        </div>
+                        <div className="container-anuncio-filtrado">
+                            <div className="card-anuncio-filtrado">
+                                <div className="anuncio-foto">{"<IMAGEM ANUNCIO>"}</div>
+                                <div className="anuncio-titulo-desc">
+                                    <div className="anuncio-titulo">{"TITULO ANUNCIO"}</div>
+                                    <div className="anuncio-desc">
+                                        <div className="anuncio-desc-texto">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card-anuncio-filtrado">
+                                <div className="anuncio-foto">{"<IMAGEM ANUNCIO>"}</div>
+                                <div className="anuncio-titulo-desc">
+                                    <div className="anuncio-titulo">{"TITULO ANUNCIO"}</div>
+                                    <div className="anuncio-desc">
+                                        <div className="anuncio-desc-texto">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor ctetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="card-anuncio-filtrado">
+                                <div className="anuncio-foto">{"<IMAGEM ANUNCIO>"}</div>
+                                <div className="anuncio-titulo-desc">
+                                    <div className="anuncio-titulo">{"TITULO ANUNCIO"}</div>
+                                    <div className="anuncio-desc">
+                                        <div className="anuncio-desc-texto">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </>

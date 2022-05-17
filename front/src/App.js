@@ -7,7 +7,7 @@ import Home from './pages/Home'
 import Error401 from './pages/401';
 import Login from './pages/Login'
 import Cadastro from './pages/Cadastro';
-import Inicio from './pages/Inicio';
+import AnunciosPage from './pages/Anuncios';
 
 function App() {
   return (
@@ -18,11 +18,11 @@ function App() {
           <Route path="/cadastro" element={<Cadastro />} />
           <Route path="/login" element={<Login />} />
           <Route path="/401" element={<Error401 />} />
-          <Route path="/inicio" element={<Inicio />} />
+          {/* <Route path="/inicio" element={<Inicio />} /> */}
+          <Route path="/anuncios/" element={<AnunciosPage />} />
           <Route exact path='/' element={<PrivateRoute/>}>
             <Route path="/perfil" element={<Home />} />
             <Route path="/meus-anuncios" element={<Home />} />
-            <Route path="/anuncios/" element={<Home />} />
             <Route path="/cadastro-anuncio" element={<Home />} />
           </Route>
         </Routes>
