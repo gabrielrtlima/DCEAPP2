@@ -1,9 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import Home from './pages/Home'
 import Provider from './store/Provider'
 import PrivateRoute from './routes/private/Private';
+
+import Home from './pages/Home'
 import Error401 from './pages/401';
+import Login from './pages/Login'
+import Cadastro from './pages/Cadastro';
+import Inicio from './pages/Inicio';
 
 function App() {
   return (
@@ -11,11 +15,11 @@ function App() {
       <Provider>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/cadastro" element={<Home />} />
-          <Route path="/login" element={<Home />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/401" element={<Error401 />} />
+          <Route path="/inicio" element={<Inicio />} />
           <Route exact path='/' element={<PrivateRoute/>}>
-            <Route path="/inicio" element={<Home />} />
             <Route path="/perfil" element={<Home />} />
             <Route path="/meus-anuncios" element={<Home />} />
             <Route path="/anuncios/" element={<Home />} />

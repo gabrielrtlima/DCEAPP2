@@ -1,0 +1,45 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: #1E001B;
+    color: #fff;
+}
+
+.header-navigate {
+    display: flex;
+}
+
+.header-logo {
+    font-family: 'Rubik';
+}
+
+.header-logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-navigate a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 19px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-navigate-login {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.header-navigate-anuncios {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+#menu-appbar {
+    margin-top: 2%;
+}
+
+.header-navigate-perfil {
+    display: flex;
+}
