@@ -1,6 +1,7 @@
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 2%;
     background-color: #1E001B;
     color: #fff;
@@ -8,6 +9,8 @@ header {
 
 .header-navigate {
     display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .header-logo {
@@ -26,6 +29,11 @@ header {
     font-family: 'Montserrat', sans-serif;
 }
 
+.header-navigate-links {
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
 .header-navigate-login {
     padding-left: 4%;
     padding-right: 4%;
@@ -42,4 +50,15 @@ header {
 
 .header-navigate-perfil {
     display: flex;
+}
+
+.header-navigate-criar {
+    background-color: #018d2b;
+    padding: 4%;  
+    border-radius: 5px;
+    margin-right: 2%;
+}
+
+.header-navigate-criar a{
+    display: flex;    
 }

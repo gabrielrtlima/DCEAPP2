@@ -1,6 +1,6 @@
 import Header from '../../components/Header';
-import Filtro from '../../components/Filtro';
 import React from 'react';
+import Anuncios from '../../components/Anuncios';
 import { Navigate } from 'react-router-dom';
 
 import './index.css';
@@ -15,7 +15,7 @@ const Inicio = () => {
             <div className="inicio-body">
                 <Header />
                 <div className="inicio-container">
-                    <Filtro />                    
+                    <Anuncios />        
                 </div>
             </div>
         </>

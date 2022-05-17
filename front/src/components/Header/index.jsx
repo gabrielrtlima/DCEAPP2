@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import { FaAngleDown } from "react-icons/fa";
+import Button from '@mui/material/Button';
+import { FaAngleDown, FaPlus } from "react-icons/fa";
+
 
 import './index.css'
 
@@ -27,14 +29,17 @@ const Header = () => {
             <div className='header-navigate'>
                 {userLogado ? (
                     <>
-                        <div className="header-navigate-inicio">
+                        <div className="header-navigate-criar header-navigate-links">
+                            <Link to=""><FaPlus /> Anúncio</Link>
+                        </div>
+                        <div className="header-navigate-inicio header-navigate-links">
                             <Link to="/inicio">Início</Link>
                         </div>
-                        <div className="header-navigate-anuncios">
+                        <div className="header-navigate-anuncios header-navigate-links">
                             <Link to="/inicio">Anúncios</Link>
                         </div>
-                        <div className="header-navigate-perfil">
-                            <Link to="" onClick={handleMenu}>PERFIL</Link>
+                        <div className="header-navigate-perfil header-navigate-links">
+                            <Link to="" onClick={handleMenu}>{"<NOME>"}</Link>
                             <FaAngleDown onClick={handleMenu}/>
                             <Menu
                             id="menu-appbar"
