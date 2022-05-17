@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 const FormCadastro = () => {
     return (
@@ -47,8 +48,11 @@ const FormCadastro = () => {
           />
         </div>
         <Button variant="contained">Cadastrar</Button>
-      </Box>
-    );
-  };
+        <Link to="/login" id="login-link">
+          Já possui cadastro? Faça seu login!
+        </Link>
+    </Box>
+  );
+};
 
 export default FormCadastro;
