@@ -16,8 +16,8 @@ public class Anuncio {
     private Long id;
     private String nome;
     private String descricao;
-    private String contato;
     private String imagem;
+    private String categoria;
     private Long usuario_id;
 
 }

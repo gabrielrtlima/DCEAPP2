@@ -20,8 +20,9 @@ public class Usuario {
     private String email;
     private String senha;
 
-    private String CPF;
     private String telefone;
+    private String instagram;
+    private String facebook;
 
     @ManyToMany(fetch = EAGER)
     private Collection<TipoUsuario> tipoUsuario = new ArrayList<>();
