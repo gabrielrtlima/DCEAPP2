@@ -39,7 +39,7 @@ const Anuncios = () => {
                     {anunciosRecentes.map(anuncio => (
                             <div className="card-recente-anuncio">
                                 <div className="anuncio-foto"><img src={anuncio.imagem} /></div>
-                                <div className="anuncio-nome">{anuncio.nome}</div>
+                                <div className="anuncio-nome">{anuncio.nome.toUpperCase()}</div>
                             </div>
                     ))}
                      </div>

@@ -24,8 +24,7 @@ const Header = () => {
     };
 
     const handleQuit = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('usuarioEmail');
+        localStorage.clear()
         setUserLogado(false);
         setAnchorEl(null);
         navigate('/');
