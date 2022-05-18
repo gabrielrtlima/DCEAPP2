@@ -1,10 +1,26 @@
 import { FaCar, FaPhone, FaMusic, FaBed } from 'react-icons/fa';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css'
 
 const Anuncios = () => {
     
-    const [filtro, setFiltro] = useState('carro');
+    const [filtro, setFiltro] = useState('');
+    const [anuncios, setAnuncios] = useState([]);
+    const [anunciosRecentes, setAnunciosRecentes] = useState([]);
+
+    useEffect(() => {
+        const url = 'http://localhost:8080/api/anuncios'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            setAnuncios(data)
+            let anunciosR = data.reverse()
+            anunciosR = data.slice(0, 3)
+            setAnunciosRecentes(anunciosR)
+            console.log(anunciosR)
+        })
+    }, [])
+    console.log(anuncios)
 
     return(
         <div className='corpo-anuncio'>
@@ -14,25 +30,19 @@ const Anuncios = () => {
                 <div className="filtro-circulo"><FaMusic size={50} values={"musica"} onClick={() => setFiltro("musica")}/>Músicas e Hobbies</div>
                 <div className="filtro-circulo"><FaBed size={50}values={"moveis"} onClick={(e) => setFiltro("Recentes")}/>Para sua casa</div>
             </div>
-            { (filtro == "Recentes") ? (
+            { (filtro == "Recentes" || filtro == "") ? (
                 <>
                     <div className="anuncios-titulo-filtro-recente">
                         Anúncios Recentes
                     </div>
                     <div className="card-recentes">
-                        <div className="card-recente-anuncio">
-                            <div className="anuncio-foto">{"<IMAGEM ANUNCIO>"}</div>
-                            <div className="anuncio-nome">{"<TITULO ANUNCIO>"}</div>
-                        </div>
-                        <div className="card-recente-anuncio">
-                            <div className="anuncio-foto">{"<IMAGEM ANUNCIO>"}</div>
-                            <div className="anuncio-nome">{"<TITULO ANUNCIO>"}</div>
-                        </div>
-                        <div className="card-recente-anuncio">
-                            <div className="anuncio-foto">{"<IMAGEM ANUNCIO>"}</div>
-                            <div className="anuncio-nome">{"<TITULO ANUNCIO>"}</div>
-                        </div>
-                    </div>
+                    {anunciosRecentes.map(anuncio => (
+                            <div className="card-recente-anuncio">
+                                <div className="anuncio-foto"><img src={anuncio.imagem} /></div>
+                                <div className="anuncio-nome">{anuncio.nome}</div>
+                            </div>
+                    ))}
+                     </div>
                 </>
             ) : (
                 <>

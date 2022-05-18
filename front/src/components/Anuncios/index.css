@@ -73,7 +73,7 @@
 
 .body-anuncio-filtrado {
     width: 100%;
-    background-color: #5C354B;
+    background-color: rgb(217, 215, 215);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,10 +85,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #736479;
     width: 70%;
     border-radius: 15px;
     margin-bottom: 2%;
+    background: rgba(33, 4, 40, 0.41);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card-anuncio-filtrado {
@@ -133,4 +141,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.anuncio-foto {
+    display: flex;
+    justify-content: center;
+}
+
+.anuncio-foto img {
+    border: 1px solid #000;
+}
+
+.anuncio-nome {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    padding-bottom: 2%;
 }

@@ -17,11 +17,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 75%;
+    width: 55%;
     padding-top: 2%;
     padding-bottom: 2%;
-
-
     background: rgba(255, 255, 255, 0.41);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -31,17 +29,34 @@
 
 }
 
-img{
-    width: 60%;
-    height: auto;
+.img-logo{
+    height: 15rem;
+}
+
+.anuncio-foto img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .home-texto {
     color: #fff;
     font-family: 'Montserrat';
-    text-justify: center;
+    text-justify: flex-start;
     text-align: center;
     padding-top: 2%;
     padding-right: 1%;
-    font-size: 35px;
+    font-size: 20px;
+    width: 65%;
+}
+
+.link-home {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Montserrat';
+    text-align: center;
+    padding: 1%;
+    margin-top: 2%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10;
 }

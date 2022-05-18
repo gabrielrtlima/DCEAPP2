@@ -1,23 +1,43 @@
+import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header';
-import React from 'react';
-import Anuncios from '../../components/Anuncios';
-import { Navigate } from 'react-router-dom';
-
 import './index.css';
 
 const Inicio = () => {
-    // if(localStorage.getItem('token') === null){
-    //     return <Navigate to="/login" />
-    // }
+
+    const [meusAnuncios, setMeusAnuncios] = useState([]);
+    const [meusAnunciosMostrar, setMeusAnunciosMostrar] = useState([]);
+
+    const usuarioId = localStorage.getItem('usuarioId');
+    console.log(usuarioId)
 
     return(
         <>
-            <div className="inicio-body">
-                <Header />
-                <div className="inicio-container">
-                    <Anuncios />        
+        <Header />
+        <div className="body-inicio">
+            <div className="body-inicio-content">
+                Olá, seja bem vindo {localStorage.getItem('usuarioNome')}.
+            </div>
+            <div className="container-meus-anuncios">
+                <div className="container-meus-anuncios-title">
+                    SEUS ANÚNCIOS
+                </div>
+                <div className="container-card">
+                    {/* {meusAnunciosMostrar.map(anuncio => {
+                        if(anuncio.usuario_id == usuarioId) { */}
+                            <div className="card-meus-anuncios">
+                                <div className="card-meus-anuncios-img">
+                                    <img src={"anuncio.imagem"} />
+                                </div>
+                                <div className="card-meus-anuncios-title">
+                                    {"anuncio.nome"}
+                                </div>   
+                            </div>
+                        {/* }
+                    })} */}
+    
                 </div>
             </div>
+        </div>
         </>
     );
 }
