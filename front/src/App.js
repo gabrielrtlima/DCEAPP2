@@ -9,6 +9,7 @@ import Login from './pages/Login'
 import Cadastro from './pages/Cadastro';
 import AnunciosPage from './pages/Anuncios';
 import Inicio from './pages/Inicio';
+import CriarAnuncio from './pages/CriarAnuncio';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
             <Route path="/anuncios/" element={<AnunciosPage />} />
             <Route path="/perfil" element={<Home />} />
             <Route path="/meus-anuncios" element={<Home />} />
-            <Route path="/cadastro-anuncio" element={<Home />} />
+            <Route path="/criar-anuncio" element={<CriarAnuncio />} />
           </Route>
         </Routes>
       </Provider>

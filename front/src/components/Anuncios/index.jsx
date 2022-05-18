@@ -1,4 +1,5 @@
-import { FaCar, FaPhone, FaMusic, FaBed } from 'react-icons/fa';
+import { FaCar, FaPhone, FaMusic, FaBed, FaBookmark } from 'react-icons/fa';
+import { AiFillGold } from 'react-icons/ai';
 import React, { useEffect, useState } from 'react';
 import './index.css'
 
@@ -25,10 +26,12 @@ const Anuncios = () => {
     return(
         <div className='corpo-anuncio'>
             <div className="filtro-container">
-                <div className="filtro-circulo"><FaCar size={50} values={"carro"} onClick={() => setFiltro("carro")}/>Autos e peças</div>
-                <div className="filtro-circulo"><FaPhone size={50} values={"celular"} onClick={() => setFiltro("celular")}/>Eletrônicos e Celulares</div>
-                <div className="filtro-circulo"><FaMusic size={50} values={"musica"} onClick={() => setFiltro("musica")}/>Músicas e Hobbies</div>
-                <div className="filtro-circulo"><FaBed size={50}values={"moveis"} onClick={(e) => setFiltro("Recentes")}/>Para sua casa</div>
+                <div className="filtro-circulo"><FaCar size={50} values={"carro"} color="white" onClick={() => setFiltro("carro")}/>Autos e peças</div>
+                <div className="filtro-circulo"><FaPhone size={50} values={"celular"} color="white" onClick={() => setFiltro("celular")}/>Eletrônicos e Celulares</div>
+                <div className="filtro-circulo"><FaMusic size={50} values={"musica"} color="white" onClick={() => setFiltro("musica")}/>Músicas e Hobbies</div>
+                <div className="filtro-circulo"><FaBed size={50}values={"moveis"} color="white" onClick={(e) => setFiltro("moveis")}/>Para sua casa</div>
+                <div className="filtro-circulo"><AiFillGold size={50}values={"moveis"} color="white" onClick={(e) => setFiltro("outros")}/>Outros</div>
+                <div className="filtro-circulo"><FaBookmark size={50}values={"moveis"} color="white" onClick={(e) => setFiltro("todos")}/>Todos Anúncios</div>
             </div>
             { (filtro == "Recentes" || filtro == "") ? (
                 <>
@@ -52,6 +55,8 @@ const Anuncios = () => {
                         { filtro === 'celular' && <h1>Eletrônicos e Celulares</h1> }
                         { filtro === 'musica' && <h1>Músicas e Hobbies</h1> }
                         { filtro === 'moveis' && <h1>Para sua casa</h1> }
+                        { filtro === 'outros' && <h1>Outros</h1> }
+                        { filtro === 'todos' && <h1>Todos os Anúncios</h1> }
                         </div>
                         <div className="container-anuncio-filtrado">
                             <div className="card-anuncio-filtrado">

@@ -24,7 +24,7 @@ const MeusAnunciosInicio = () => {
     return(
         <div className="container-meus-anuncios">
             <div className="container-meus-anuncios-title">
-                SEUS ANÚNCIOS
+                SEUS ÚLTIMOS ANÚNCIOS
             </div>
             <div className="container-meus-anuncios-body">
             {anunciosRecentes.map(anuncio => (

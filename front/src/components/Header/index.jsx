@@ -51,7 +51,8 @@ const Header = () => {
         localStorage.setItem('usuarioNome', data.nome);
         localStorage.setItem('usuarioEmail', data.email);
         localStorage.setItem('usuarioId', data.id);
-        localStorage.setItem('tipoUsuario', data.tipoUsuario[0].id);
+        localStorage.setItem('tipoUsuario', data.tipoUsuario[0].name);
+        console.log(localStorage.getItem('tipoUsuario'))
         
     }
     usuario();
@@ -65,7 +66,7 @@ const Header = () => {
                 {userLogado ? (
                     <>
                         <div className="header-navigate-criar header-navigate-links">
-                            <Link to=""><FaPlus /> Anúncio</Link>
+                            <Link to="/criar-anuncio"><FaPlus /> Anúncio</Link>
                         </div>
                         <div className="header-navigate-inicio header-navigate-links">
                             <Link to="/inicio">Início</Link>
@@ -93,6 +94,9 @@ const Header = () => {
                             >
                                 <MenuItem onClick={handleClose}>Editar perfil</MenuItem>
                                 <MenuItem onClick={handleClose}>Meus anúncios</MenuItem>
+                                {localStorage.getItem('tipoUsuario') === 'Administrador' && (
+                                    <MenuItem onClick={handleClose}>Painel Admin</MenuItem>
+                                )}
                                 <MenuItem onClick={handleQuit}>Sair</MenuItem>
                             </Menu>
                         </div>  
