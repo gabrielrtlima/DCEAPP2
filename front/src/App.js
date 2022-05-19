@@ -10,6 +10,7 @@ import Cadastro from './pages/Cadastro';
 import AnunciosPage from './pages/Anuncios';
 import Inicio from './pages/Inicio';
 import CriarAnuncio from './pages/CriarAnuncio';
+import Admin from './pages/Admin/index';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/401" element={<Error401 />} />
           <Route path="/inicio" element={<Inicio />} />
+          <Route path="/admin" element={<Admin />} />
           <Route exact path='/' element={<PrivateRoute/>}>
             <Route path="/anuncios/" element={<AnunciosPage />} />
             <Route path="/perfil" element={<Home />} />
