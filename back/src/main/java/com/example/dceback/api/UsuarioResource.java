@@ -112,6 +112,21 @@ public class UsuarioResource {
         }
     }
 
+    @PutMapping("/usuario/{id}")
+    public ResponseEntity<Usuario> updateUsuario(
+    @PathVariable(value = "id") Long id,
+    @Valid @RequestBody Usuario usuarioDetails) throws ResourceNotFoundException {
+        Usuario usuario = usuarioRepo.findById(id)
+          .orElseThrow(() -> new ResourceNotFoundException("User not found on :: "+ id));
+  
+        usuario.setName(usuarioDetails.getName());
+        usuario.setTelefone(usuarioDetails.getTelefone());
+        usuario.setInstagram(usuarioDetails.getInstagram());
+        usuario.setFacebook(usuarioDetails.getFacebook());
+        final Usuario updateUsuario = usuarioRepo.save(usuario);
+        return ResponseEntity.ok(updateUsuario);
+   }
+
 }
 
 @Data
