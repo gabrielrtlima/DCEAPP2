@@ -4,31 +4,27 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import NativeSelect from '@mui/material/NativeSelect';
 
 export default function SelectLabels() {
-  const [age, setAge] = React.useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  const [enity, setEnity] = React.useState('user');
 
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <Select
-          value={age}
-          onChange={handleChange}
-          displayEmpty
-          inputProps={{ 'aria-label': 'Without label' }}
+      <FormControl>
+        <InputLabel variant="standard" htmlFor="uncontrolled-native">
+          Entidade
+        </InputLabel>
+        <NativeSelect
+          defaultValue={enity}
+          inputProps={{
+            name: 'enity',
+            id: 'enity-native',
+          }}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
-        </Select>
-        <FormHelperText>Entidade escolhida</FormHelperText>
+          <option onClick={() => setEnity("user")}>Usuário</option>
+          <option onClick={() => setEnity("anuncio")}>Anúncio</option>
+        </NativeSelect>
       </FormControl>
     </div>
   );

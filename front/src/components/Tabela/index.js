@@ -22,6 +22,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 import MenuOpen from '../MenuOpen/index'
+import Select from '../Select/index'
 
 function createDataAnuncio(id, nome, categoria, usuario_id, options) {
   return {
@@ -219,7 +220,7 @@ const fetchHeadCells = (length) => {
 }
 
 function EnhancedTableHead(props) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
+  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort, selected_length } =
     props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
@@ -239,7 +240,7 @@ function EnhancedTableHead(props) {
             }}
           />
         </TableCell>
-        {headCellsUser.map((headCell) => (
+        {fetchHeadCells(selected_length).map((headCell) => (
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
@@ -272,6 +273,7 @@ EnhancedTableHead.propTypes = {
   order: PropTypes.oneOf(['asc', 'desc']).isRequired,
   orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
+  selected_length: PropTypes.number.isRequired,
 };
 
 const EnhancedTableToolbar = (props) => {
@@ -304,7 +306,7 @@ const EnhancedTableToolbar = (props) => {
           id="tableTitle"
           component="div"
         >
-          Nutrition
+          <Select />
         </Typography>
       )}
 
@@ -329,7 +331,9 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable() {
+export default function EnhancedTable(props) {
+  const { enity } = props;
+
   const [order, setOrder] = React.useState('asc');
   const [orderBy, setOrderBy] = React.useState('calories');
   const [selected, setSelected] = React.useState([]);
@@ -408,6 +412,7 @@ export default function EnhancedTable() {
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={rowsUser.length}
+              selected_length={selected.length}
             />
             <TableBody>
               {/* if you don't need to support IE11, you can replace the `stableSort` call with:
