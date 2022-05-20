@@ -21,31 +21,46 @@ import Switch from '@mui/material/Switch';
 import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
+import MenuOpen from '../MenuOpen/index'
 
-function createData(name, calories, fat, carbs, protein) {
+function createDataAnuncio(id, nome, categoria, usuario_id, options) {
   return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
+    id,
+    nome,
+    categoria,
+    usuario_id,
+    options,
   };
 }
 
-const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+function createDataUser(id, nome, email, telefone, options) {
+  return {
+    id,
+    nome,
+    email,
+    telefone,
+    options,
+  };
+}
+
+const rowsAnuncio = [
+    createDataAnuncio(1, "Computador i7", "tecnologia", 3, <MenuOpen />),
+    createDataAnuncio(2, "Computador i7", "tecnologia", 3, <MenuOpen />),
+    createDataAnuncio(3, "Computador i7", "tecnologia", 3, <MenuOpen />),
+    createDataAnuncio(4, "Computador i7", "tecnologia", 3, <MenuOpen />),
+    createDataAnuncio(5, "Computador i7", "tecnologia", 3, <MenuOpen />),
+    createDataAnuncio(6, "Computador i7", "tecnologia", 3, <MenuOpen />),
+    createDataAnuncio(7, "Computador i7", "tecnologia", 3, <MenuOpen />),
+];
+
+const rowsUser = [
+    createDataUser(1, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
+    createDataUser(2, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
+    createDataUser(3, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
+    createDataUser(4, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
+    createDataUser(5, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
+    createDataUser(6, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
+    createDataUser(7, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -78,38 +93,130 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-const headCells = [
+const headCellsAnuncio = [
   {
-    id: 'name',
+    id: 'id',
     numeric: false,
     disablePadding: true,
-    label: 'Dessert (100g serving)',
+    label: 'ID',
   },
   {
-    id: 'calories',
+    id: 'nome',
     numeric: true,
     disablePadding: false,
-    label: 'Calories',
+    label: 'Nome',
   },
   {
-    id: 'fat',
+    id: 'categoria',
     numeric: true,
     disablePadding: false,
-    label: 'Fat (g)',
+    label: 'Categoria',
   },
   {
-    id: 'carbs',
+    id: 'user_id',
     numeric: true,
     disablePadding: false,
-    label: 'Carbs (g)',
+    label: 'ID do usuário',
   },
   {
-    id: 'protein',
+    id: 'options',
     numeric: true,
     disablePadding: false,
-    label: 'Protein (g)',
+    label: 'Opções',
   },
 ];
+
+const headCellsUser = [
+  {
+    id: 'id',
+    numeric: false,
+    disablePadding: true,
+    label: 'ID',
+  },
+  {
+    id: 'nome',
+    numeric: true,
+    disablePadding: false,
+    label: 'Nome',
+  },
+  {
+    id: 'email',
+    numeric: true,
+    disablePadding: false,
+    label: 'Email',
+  },
+  {
+    id: 'telefone',
+    numeric: true,
+    disablePadding: false,
+    label: 'Telefone',
+  },
+  {
+    id: 'options',
+    numeric: true,
+    disablePadding: false,
+    label: 'Opções',
+  },
+];
+
+const headCellsAnuncioWithItemSelected = [
+  {
+    id: 'id',
+    numeric: false,
+    disablePadding: true,
+    label: 'ID',
+  },
+  {
+    id: 'nome',
+    numeric: true,
+    disablePadding: false,
+    label: 'Nome',
+  },
+  {
+    id: 'categoria',
+    numeric: true,
+    disablePadding: false,
+    label: 'Categoria',
+  },
+  {
+    id: 'user_id',
+    numeric: true,
+    disablePadding: false,
+    label: 'ID do usuário',
+  },
+];
+
+const headCellsUserWithItemSelected = [
+  {
+    id: 'id',
+    numeric: false,
+    disablePadding: true,
+    label: 'ID',
+  },
+  {
+    id: 'nome',
+    numeric: true,
+    disablePadding: false,
+    label: 'Nome',
+  },
+  {
+    id: 'email',
+    numeric: true,
+    disablePadding: false,
+    label: 'Email',
+  },
+  {
+    id: 'telefone',
+    numeric: true,
+    disablePadding: false,
+    label: 'Telefone',
+  },
+];
+
+const fetchHeadCells = (length) => {
+    if (length > 0) return headCellsUserWithItemSelected;
+    return headCellsUser;
+}
 
 function EnhancedTableHead(props) {
   const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } =
@@ -132,7 +239,7 @@ function EnhancedTableHead(props) {
             }}
           />
         </TableCell>
-        {headCells.map((headCell) => (
+        {headCellsUser.map((headCell) => (
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
@@ -238,19 +345,19 @@ export default function EnhancedTable() {
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-      const newSelecteds = rows.map((n) => n.name);
+      const newSelecteds = rowsUser.map((n) => n.id);
       setSelected(newSelecteds);
       return;
     }
     setSelected([]);
   };
 
-  const handleClick = (event, name) => {
-    const selectedIndex = selected.indexOf(name);
+  const handleClick = (event, id) => {
+    const selectedIndex = selected.indexOf(id);
     let newSelected = [];
 
     if (selectedIndex === -1) {
-      newSelected = newSelected.concat(selected, name);
+      newSelected = newSelected.concat(selected, id);
     } else if (selectedIndex === 0) {
       newSelected = newSelected.concat(selected.slice(1));
     } else if (selectedIndex === selected.length - 1) {
@@ -278,11 +385,11 @@ export default function EnhancedTable() {
     setDense(event.target.checked);
   };
 
-  const isSelected = (name) => selected.indexOf(name) !== -1;
+  const isSelected = (id) => selected.indexOf(id) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rowsUser.length) : 0;
 
   return (
     <Box sx={{ width: '100%' }}>
@@ -300,29 +407,29 @@ export default function EnhancedTable() {
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={rows.length}
+              rowCount={rowsUser.length}
             />
             <TableBody>
               {/* if you don't need to support IE11, you can replace the `stableSort` call with:
                  rows.slice().sort(getComparator(order, orderBy)) */}
-              {stableSort(rows, getComparator(order, orderBy))
+              {stableSort(rowsUser, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name);
+                  const isItemSelected = isSelected(row.id);
                   const labelId = `enhanced-table-checkbox-${index}`;
 
                   return (
                     <TableRow
                       hover
-                      onClick={(event) => handleClick(event, row.name)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name}
+                      key={row.id}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
                         <Checkbox
+                          onClick={(event) => handleClick(event, row.id)}
                           color="primary"
                           checked={isItemSelected}
                           inputProps={{
@@ -336,12 +443,14 @@ export default function EnhancedTable() {
                         scope="row"
                         padding="none"
                       >
-                        {row.name}
+                        {row.id}
                       </TableCell>
-                      <TableCell align="right">{row.calories}</TableCell>
-                      <TableCell align="right">{row.fat}</TableCell>
-                      <TableCell align="right">{row.carbs}</TableCell>
-                      <TableCell align="right">{row.protein}</TableCell>
+                      <TableCell align="right">{row.nome}</TableCell>
+                      <TableCell align="right">{row.email}</TableCell>
+                      <TableCell align="right">{row.telefone}</TableCell>
+                      {
+                        selected.length === 0 && <TableCell align="right">{row.options}</TableCell>
+                      }
                     </TableRow>
                   );
                 })}
@@ -360,7 +469,7 @@ export default function EnhancedTable() {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={rows.length}
+          count={rowsUser.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
