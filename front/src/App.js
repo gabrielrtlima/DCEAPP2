@@ -10,6 +10,8 @@ import Cadastro from './pages/Cadastro';
 import AnunciosPage from './pages/Anuncios';
 import Inicio from './pages/Inicio';
 import CriarAnuncio from './pages/CriarAnuncio';
+import MeusAnuncios from './pages/MeusAnuncios';
+import DashboardAdmin from './pages/DashboardAdmin';
 import Admin from './pages/Admin/index';
 
 function App() {
@@ -26,7 +28,8 @@ function App() {
           <Route exact path='/' element={<PrivateRoute/>}>
             <Route path="/anuncios/" element={<AnunciosPage />} />
             <Route path="/perfil" element={<Home />} />
-            <Route path="/meus-anuncios" element={<Home />} />
+            <Route path="/admin/dashboard" element={<DashboardAdmin />} />
+            <Route path="/meus-anuncios" element={<MeusAnuncios />} />
             <Route path="/criar-anuncio" element={<CriarAnuncio />} />
           </Route>
         </Routes>

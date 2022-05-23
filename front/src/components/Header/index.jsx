@@ -53,9 +53,16 @@ const Header = () => {
         localStorage.setItem('usuarioId', data.id);
         localStorage.setItem('tipoUsuario', data.tipoUsuario[0].name);
         console.log(localStorage.getItem('tipoUsuario'))
-        
     }
-    usuario();
+    usuario()
+
+    const handleMeusAnuncios = () => {
+        navigate('/meus-anuncios');
+    }
+
+    const handlePainelAdmin = () => {
+        navigate('/admin/dashboard')
+    }
 
     return(
         <header>
@@ -93,9 +100,9 @@ const Header = () => {
                             onClose={handleClose}
                             >
                                 <MenuItem onClick={handleClose}>Editar perfil</MenuItem>
-                                <MenuItem onClick={handleClose}>Meus anúncios</MenuItem>
+                                <MenuItem onClick={handleMeusAnuncios} >Meus anúncios</MenuItem>
                                 {localStorage.getItem('tipoUsuario') === 'Administrador' && (
-                                    <MenuItem onClick={handleClose}>Painel Admin</MenuItem>
+                                    <MenuItem onClick={handlePainelAdmin}>Administração</MenuItem>
                                 )}
                                 <MenuItem onClick={handleQuit}>Sair</MenuItem>
                             </Menu>
