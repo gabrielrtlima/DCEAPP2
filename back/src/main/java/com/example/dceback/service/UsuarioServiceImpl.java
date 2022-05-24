@@ -103,6 +103,16 @@ public class UsuarioServiceImpl implements UsuarioService, UserDetailsService {
         return usuarioRepo.findUsuariosByEmail(email);
     }
 
+    @Override
+    public Optional<Usuario> updateUsuario(Long id, Usuario usuario) {
+        log.info("Atualizando usuário: " + id);
+        return usuarioRepo.findById(id).map(usuario1 -> {
+            usuario1.setNome(usuario.getNome());
+            usuario1.setSenha(usuario.getSenha());
+            return usuarioRepo.save(usuario1);
+        });
+    }
+
     public Collection<? extends GrantedAuthority> getAuthorities(Usuario usuario) {
         return usuario.getTipoUsuario().stream()
                 .map(tipoUsuario -> new SimpleGrantedAuthority(tipoUsuario.getName()))

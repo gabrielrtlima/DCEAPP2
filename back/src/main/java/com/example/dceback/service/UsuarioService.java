@@ -16,4 +16,5 @@ public interface UsuarioService{
     List<Usuario> getUsuarios();
     Optional<Usuario> findById(Long id);
     Optional<Usuario> findUsuarioByEmail(String email);
+    Optional<Usuario> updateUsuario(Long id, Usuario usuario);
 }
