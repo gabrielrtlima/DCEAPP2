@@ -24,46 +24,6 @@ import { visuallyHidden } from '@mui/utils';
 import MenuOpen from '../MenuOpen/index'
 import Select from '../Select/index'
 
-function createDataAnuncio(id, nome, categoria, usuario_id, options) {
-  return {
-    id,
-    nome,
-    categoria,
-    usuario_id,
-    options,
-  };
-}
-
-function createDataUser(id, nome, email, telefone, options) {
-  return {
-    id,
-    nome,
-    email,
-    telefone,
-    options,
-  };
-}
-
-const rowsAnuncio = [
-    createDataAnuncio(1, "Computador i7", "tecnologia", 3, <MenuOpen />),
-    createDataAnuncio(2, "Computador i7", "tecnologia", 3, <MenuOpen />),
-    createDataAnuncio(3, "Computador i7", "tecnologia", 3, <MenuOpen />),
-    createDataAnuncio(4, "Computador i7", "tecnologia", 3, <MenuOpen />),
-    createDataAnuncio(5, "Computador i7", "tecnologia", 3, <MenuOpen />),
-    createDataAnuncio(6, "Computador i7", "tecnologia", 3, <MenuOpen />),
-    createDataAnuncio(7, "Computador i7", "tecnologia", 3, <MenuOpen />),
-];
-
-const rowsUser = [
-    createDataUser(1, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-    createDataUser(2, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-    createDataUser(3, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-    createDataUser(4, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-    createDataUser(5, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-    createDataUser(6, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-    createDataUser(7, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-];
-
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -345,6 +305,9 @@ EnhancedTableToolbar.propTypes = {
 };
 
 export default function EnhancedTable(props) {
+
+  const { rowsAnuncio, rowsUser } = props;
+
   const [value, setValue] = React.useState('users');
 
   const handleChange = (event) => {
