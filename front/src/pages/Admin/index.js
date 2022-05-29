@@ -3,9 +3,31 @@ import Header from '../../components/Header';
 import Table from '../../components/Tabela/index';
 import Select from '../../components/Select/index';
 import MenuOpen from '../../components/MenuOpen/index';
+import { anuncioDelete, userDelete } from './actions'
 import './index.css';
 
 const Admin = () => {
+    const [anuncios, setAnuncios] = useState([]);
+    const [usuarios, setUsuarios] = useState([]);
+
+    useEffect(() => {
+        const url = 'http://localhost:8080/api/anuncios'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            setAnuncios(data)
+        })
+    }, [])
+
+    useEffect(() => {
+        const url = 'http://localhost:8080/api/usuarios'
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            setUsuarios(data)
+        })
+    }, [])
+
     function createDataAnuncio(id, nome, categoria, usuario_id, options) {
         return {
           id,
@@ -26,25 +48,35 @@ const Admin = () => {
         };
     }
 
-    const rowsAnuncio = [
-        createDataAnuncio(1, "Computador i7", "tecnologia", 3, <MenuOpen />),
-        createDataAnuncio(2, "Computador i7", "tecnologia", 3, <MenuOpen />),
-        createDataAnuncio(3, "Computador i7", "tecnologia", 3, <MenuOpen />),
-        createDataAnuncio(4, "Computador i7", "tecnologia", 3, <MenuOpen />),
-        createDataAnuncio(5, "Computador i7", "tecnologia", 3, <MenuOpen />),
-        createDataAnuncio(6, "Computador i7", "tecnologia", 3, <MenuOpen />),
-        createDataAnuncio(7, "Computador i7", "tecnologia", 3, <MenuOpen />),
-    ];
+    const rowsAnuncio = (anuncios) => {
+        return anuncios.map(anuncio => (
+            createDataAnuncio(
+                anuncio.id, 
+                anuncio.nome, 
+                anuncio.categoria, 
+                anuncio.usuario_id,
+                <MenuOpen 
+                    id={anuncio.id}
+                    deleteFunction={anuncioDelete}
+                />
+            )
+        ))
+    }
     
-    const rowsUser = [
-        createDataUser(1, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-        createDataUser(2, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-        createDataUser(3, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-        createDataUser(4, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-        createDataUser(5, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-        createDataUser(6, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-        createDataUser(7, "Rafael Souza", "rafael@example.com", "+55111111111", <MenuOpen />),
-    ];
+    const rowsUser = (users) => {
+        return users.map(user => (
+            createDataUser(
+                user.id, 
+                user.nome, 
+                usuario.email, 
+                usuario.telefone,
+                <MenuOpen 
+                    id={user.id}
+                    deleteFunction={userDelete}
+                />
+            )
+        ))
+    }
 
     return(
         <>
@@ -52,8 +84,8 @@ const Admin = () => {
             <div className="body-inicio">
                 <div className="body-inicio-content">
                     <Table 
-                        rowsAnuncio={rowsAnuncio}
-                        rowsUser={rowsUser}
+                        rowsAnuncio={rowsAnuncio(anuncios)}
+                        rowsUser={rowsUser(usuarios)}
                     />
                 </div>
             </div>

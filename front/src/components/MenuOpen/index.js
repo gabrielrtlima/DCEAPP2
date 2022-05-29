@@ -104,7 +104,7 @@ const CustomizedMenus = (props) => {
                 </MenuItem>
                 <MenuItem onClick={() => {
                     setAnchorEl(null)
-                    props.deleteFunction();
+                    props.deleteFunction(props.id);
                 }} disableRipple>
                     <DeleteIcon />
                     Delete
