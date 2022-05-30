@@ -38,12 +38,11 @@ const Admin = () => {
         };
     }
       
-    function createDataUser(id, nome, email, telefone, options) {
+    function createDataUser(id, nome, email, options) {
         return {
             id,
             nome,
             email,
-            telefone,
             options,
         };
     }
@@ -69,7 +68,6 @@ const Admin = () => {
                 user.id, 
                 user.nome, 
                 user.email, 
-                user.telefone,
                 <MenuOpen 
                     id={user.id}
                     deleteFunction={userDelete}

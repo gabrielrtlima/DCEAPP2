@@ -107,12 +107,6 @@ const headCellsUser = [
     label: 'Email',
   },
   {
-    id: 'telefone',
-    numeric: true,
-    disablePadding: false,
-    label: 'Telefone',
-  },
-  {
     id: 'options',
     numeric: true,
     disablePadding: false,
@@ -165,12 +159,6 @@ const headCellsUserWithItemSelected = [
     numeric: true,
     disablePadding: false,
     label: 'Email',
-  },
-  {
-    id: 'telefone',
-    numeric: true,
-    disablePadding: false,
-    label: 'Telefone',
   },
 ];
 
@@ -463,12 +451,13 @@ export default function EnhancedTable(props) {
                           {value === "users" ? 
                           row.email : row.categoria}
                       </TableCell>
-                      <TableCell 
+                      {value !== "users" &&
+                        <TableCell 
                           align="right"
                         >
-                         {value === "users" ? 
-                         row.telefone : row.usuario_id}
-                      </TableCell>
+                          {row.usuario_id}
+                        </TableCell>
+                      }
                       {
                         selected.length === 0 && <TableCell align="right">{row.options}</TableCell>
                       }
