@@ -68,8 +68,8 @@ const Admin = () => {
             createDataUser(
                 user.id, 
                 user.nome, 
-                usuario.email, 
-                usuario.telefone,
+                user.email, 
+                user.telefone,
                 <MenuOpen 
                     id={user.id}
                     deleteFunction={userDelete}
