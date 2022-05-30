@@ -39,7 +39,7 @@ const Header = () => {
     }, [])
 
     const usuario = async () => {
-        const response = await fetch('http://dce-back.herokuapp.com/api/usuario/' + userEmail, {
+        const response = await fetch('https://dce-back.herokuapp.com/api/usuario/' + userEmail, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ const Header = () => {
     }
 
     const handlePainelAdmin = () => {
-        navigate('/admin/dashboard')
+        navigate('/admin')
     }
 
     return(
