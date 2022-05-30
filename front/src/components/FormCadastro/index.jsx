@@ -66,7 +66,7 @@ const FormCadastro = () => {
           senha: dados.senha,
           tipoUsuario: [
             {
-              id: 57,
+              id: 2,
               nome: 'Normal'
             }
           ]
