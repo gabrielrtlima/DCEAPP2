@@ -39,7 +39,7 @@ const Header = () => {
     }, [])
 
     const usuario = async () => {
-        const response = await fetch('http://localhost:8080/api/usuario/' + userEmail, {
+        const response = await fetch('http://dce-back.herokuapp.com/api/usuario/' + userEmail, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

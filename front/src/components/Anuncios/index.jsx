@@ -10,7 +10,7 @@ const Anuncios = () => {
     const [anunciosRecentes, setAnunciosRecentes] = useState([]);
 
     useEffect(() => {
-        const url = 'http://localhost:8080/api/anuncios'
+        const url = 'http://dce-back.herokuapp.com/api/anuncios'
         fetch(url)
         .then(response => response.json())
         .then(data => {
