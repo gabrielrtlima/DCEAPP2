@@ -55,7 +55,7 @@ const FormCadastro = () => {
 
     const submit = async(e) => {
       e.preventDefault();
-      const response = await fetch('http://localhost:8080/api/usuario', {
+      const response = await fetch('https://dce-back.herokuapp.com/api/usuario', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ const FormCadastro = () => {
           tipoUsuario: [
             {
               id: 57,
-              nome: 'Cliente'
+              nome: 'Normal'
             }
           ]
         })
