@@ -1,0 +1,25 @@
+.meu-perfil-container {
+    display: flex;
+    justify-content: space-evenly;
+    /* margin-left: 9%;
+    margin-right: 9%; */
+}
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    color: #fff;
+}
+
+.informacoes-card {
+    width: 12rem;
+    background-color: rgba(50, 2, 87, 0.41);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 2%;
+    margin: 4%;
+
+}
