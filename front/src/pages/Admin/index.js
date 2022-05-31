@@ -11,7 +11,7 @@ const Admin = () => {
     const [usuarios, setUsuarios] = useState([]);
 
     useEffect(() => {
-        const url = 'http://localhost:8080/api/anuncios'
+        const url = 'https://dce-back.herokuapp.com/api/anuncios'
         fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -20,7 +20,7 @@ const Admin = () => {
     }, [])
 
     useEffect(() => {
-        const url = 'http://localhost:8080/api/usuarios'
+        const url = 'https://dce-back.herokuapp.com/api/usuarios'
         fetch(url)
         .then(response => response.json())
         .then(data => {
