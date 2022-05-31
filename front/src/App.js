@@ -13,6 +13,7 @@ import CriarAnuncio from './pages/CriarAnuncio';
 import MeusAnuncios from './pages/MeusAnuncios';
 import DashboardAdmin from './pages/DashboardAdmin';
 import Admin from './pages/Admin/index';
+import Sobre from './pages/Sobre/index';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/401" element={<Error401 />} />
           <Route path="/inicio" element={<Inicio />} />
+          <Route path="/sobre" element={<Sobre />} />
           <Route exact path='/' element={<PrivateRoute/>}>
             <Route path="/anuncios/" element={<AnunciosPage />} />
             <Route path="/perfil" element={<Home />} />

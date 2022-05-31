@@ -18,8 +18,11 @@ const Home = () => {
                             {/* </Grid>
                             <Grid item xs={6}> */}
                                 <div className="home-texto">
-                                    <p>
+                                    {/*<p>
                                         DOAGUS é um sistema criado para intermediar a comunicação entre pessoas que desejam doar móveis, objetos, carros, entre outros em Garanhuns. A ideia surgiu de um projeto na Faculdade UPE, desenvolvido por alunos do curso de Engenharia de Software.
+                                    </p>*/}
+                                    <p>
+                                        Bem-vindo ao sistema DOAGUS!
                                     </p>
                                 </div>
                             {/* </Grid>
@@ -33,7 +36,7 @@ const Home = () => {
                             Login / Registrar
                         </Button>
                     </Link> */}
-                    <Link to="/login" className='link-home'> 
+                    <Link to="/sobre" className='link-home'> 
                         Clique aqui para nos conhecer! 😍
                     </Link>
                 </div>
