@@ -1,12 +1,18 @@
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { anuncioDelete } from '../../pages/Admin/actions';
 import './index.css'
 
 const MeusAnunciosComp = () => {
     const [meusAnuncios, setMeusAnuncios] = useState([])
+    const [id, setId] = useState(0)
+
+    const handleId = (id) => {
+        setId(id)
+    }
 
     useEffect(() => {
-        const url = 'http://localhost:8080/api/anuncios/'
+        const url = 'https://dce-back.herokuapp.com/api/anuncios/'
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -22,7 +28,7 @@ const MeusAnunciosComp = () => {
             </div>
             <div className="meus-anuncios-container">
                 {meusAnuncios.map(anuncio => (
-                    <>
+                    <> 
                         <div className="meus-anuncios-card">
                             <div className="meus-anuncios-card-img">
                                 <img src={anuncio.imagem} alt="" className='meus-anuncios-img'/>
@@ -37,7 +43,7 @@ const MeusAnunciosComp = () => {
                             </div>
                         </div>
                         <div className="button-meus-anuncio">
-                            <Button variant="outlined" color="error">
+                            <Button variant="outlined" color="error" onClick={() => anuncioDelete(anuncio.id)}>
                                 EXCLUIR
                             </Button>
                         </div>

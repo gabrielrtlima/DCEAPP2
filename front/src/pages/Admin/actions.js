@@ -1,5 +1,5 @@
 export const userDelete = async (id) => {
-    fetch('http://127.0.0.1:8080/usuario/' + id, {
+    fetch('https://dce-back.herokuapp.com/api/usuario/' + id, {
         method: 'DELETE',
     })
     .then(res => res.text()) 
@@ -7,7 +7,7 @@ export const userDelete = async (id) => {
 }
 
 export const anuncioDelete = (id) => {
-    fetch('http://127.0.0.1:8080/anuncio/' + id, {
+    fetch('https://dce-back.herokuapp.com/api/anuncio/' + id, {
         method: 'DELETE',
     })
     .then(res => res.text()) 

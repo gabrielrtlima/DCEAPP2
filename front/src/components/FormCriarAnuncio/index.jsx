@@ -71,7 +71,7 @@ const FormCriarAnuncio = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const response = await fetch('http://localhost:8080/api/anuncio', {
+        const response = await fetch('https://dce-back.herokuapp.com/api/anuncio', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

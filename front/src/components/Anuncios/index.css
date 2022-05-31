@@ -113,6 +113,7 @@
 }
 
 .anuncio-desc {
+    padding: 2%;
     display: flex;
     align-items: center;
     width: 30rem;
@@ -148,8 +149,11 @@
     justify-content: center;
 }
 
-.anuncio-foto img {
+.anuncio-principal-foto img {
     border: 1px solid #000;
+    border-radius: 8px;
+    width: 150px;
+    height: 150px;
 }
 
 .anuncio-nome {
@@ -158,4 +162,9 @@
     font-weight: 600;
     color: #000;
     padding-bottom: 2%;
+}
+
+.anuncio-contato {
+    margin: 5%;
+    color: #fff;
 }
