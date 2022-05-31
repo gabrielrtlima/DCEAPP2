@@ -69,6 +69,9 @@ const Anuncios = () => {
                                             <div className="anuncio-desc">
                                                 <div className="anuncio-desc-texto">{anuncio.descricao}</div>
                                             </div>
+                                            <div className="anuncio-contato">
+                                                <div className="anuncio-desc-texto">Contato: {anuncio.contato}</div>
+                                            </div>
                                         </div>
                                     </div>
                             ))) : (
