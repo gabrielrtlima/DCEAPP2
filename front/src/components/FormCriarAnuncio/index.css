@@ -41,6 +41,11 @@
     justify-content: center;
 }
 
+.criar-anuncio-img img{
+    width: 400px;
+    height: 400px;
+}
+
 .criar-anuncio-form {
     display: flex;
     flex-direction: column;
