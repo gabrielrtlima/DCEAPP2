@@ -5,11 +5,20 @@ import './index.css'
 
 const MeusAnunciosComp = () => {
     const [meusAnuncios, setMeusAnuncios] = useState([])
-    const [id, setId] = useState(0)
 
-    const handleId = (id) => {
-        setId(id)
+    const handleDelete = async (id) => {
+        const response = await fetch(`https://dce-back.herokuapp.com/api/anuncio/` + id, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token'),
+                'mode': 'no-cors'
+            }
+        })
+        const data = await response.json()
+        console.log(data)
     }
+        
 
     useEffect(() => {
         const url = 'https://dce-back.herokuapp.com/api/anuncios/'
@@ -43,7 +52,7 @@ const MeusAnunciosComp = () => {
                             </div>
                         </div>
                         <div className="button-meus-anuncio">
-                            <Button variant="outlined" color="error" onClick={() => anuncioDelete(anuncio.id)}>
+                            <Button variant="outlined" color="error" onClick={() => handleDelete(anuncio.id)}>
                                 EXCLUIR
                             </Button>
                         </div>

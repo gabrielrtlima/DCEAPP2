@@ -99,8 +99,8 @@ const Header = () => {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                             >
-                                <MenuItem onClick={handleClose}>Editar perfil</MenuItem>
-                                <MenuItem onClick={handleMeusAnuncios} >Meus anúncios</MenuItem>
+                                {/* <MenuItem onClick={handleClose}>Editar perfil</MenuItem> */}
+                                {/* <MenuItem onClick={handleMeusAnuncios} >Meus anúncios</MenuItem> */}
                                 {localStorage.getItem('tipoUsuario') === 'Administrador' && (
                                     <MenuItem onClick={handlePainelAdmin}>Administração</MenuItem>
                                 )}
