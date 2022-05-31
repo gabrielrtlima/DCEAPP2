@@ -31,7 +31,7 @@ const Sobre = () => {
                         </p>
                         <div className="card-aluno">
                             <div className="aluno-foto">
-                                <img src="http://www.upe.br/garanhuns/wp-content/uploads/2021/06/ivaldir-Ivaldir-Hon%C3%B3rio-de-Farias-J%C3%BAnior-150x150.png" alt=""/>
+                                <img src="./ivaldir.png" alt=""/>
                             </div>
                             <div className="aluno-texto">
                                 <p>
